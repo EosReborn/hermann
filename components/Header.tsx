@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import { Phone, MessageCircle, Menu, X } from "lucide-react";
 import { CONTACT } from "@/lib/data";
 
+// Kept short and to the point — a long link list crowds the bar and starts
+// competing with the two real conversion actions (call / WhatsApp).
 const LINKS = [
   { href: "#szolgaltatasok", label: "Szolgáltatások" },
   { href: "#referenciak", label: "Referenciák" },
-  { href: "#miert-minket", label: "Miért minket" },
-  { href: "#folyamat", label: "Folyamat" },
   { href: "#velemenyek", label: "Vélemények" },
   { href: "#gyik", label: "GYIK" },
   { href: "#kapcsolat", label: "Kapcsolat" },
@@ -25,8 +25,8 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Header sits over the dark hero photo when not scrolled, so it stays light
-  // text there; once scrolled past the hero it switches to a light glass bar.
+  // Header sits over the hero photo when not scrolled; once scrolled past
+  // the hero it switches to a light glass bar with dark text.
   const solid = scrolled || open;
 
   return (
@@ -35,6 +35,13 @@ export default function Header() {
         solid ? "glass-light shadow-glass" : "bg-transparent"
       }`}
     >
+      {/* Scrim guarantees nav legibility over any photo, independent of the
+          hero's own gradient — without it, light patches in a photo can
+          wash out light-colored nav text. */}
+      {!solid && (
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink/60 via-ink/25 to-transparent pointer-events-none" />
+      )}
+
       <div className="container-page">
         <div className="flex items-center justify-between h-20">
           <a href="#top" className="flex items-center gap-2.5 group">
@@ -50,13 +57,13 @@ export default function Header() {
             </span>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className={`font-mono text-[11px] font-medium uppercase tracking-[0.14em] whitespace-nowrap transition-colors ${
-                  solid ? "text-steel hover:text-ink" : "text-porcelain/80 hover:text-porcelain"
+                className={`font-display text-[15px] font-medium whitespace-nowrap transition-colors ${
+                  solid ? "text-steel hover:text-ink" : "text-porcelain hover:text-signal-glow"
                 }`}
               >
                 {l.label}
@@ -72,7 +79,7 @@ export default function Header() {
               className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-sm border text-sm font-semibold transition-colors ${
                 solid
                   ? "border-whatsapp/40 text-whatsapp hover:bg-whatsapp/10"
-                  : "border-whatsapp/50 text-porcelain hover:text-whatsapp hover:bg-whatsapp/10"
+                  : "border-whatsapp/60 text-porcelain hover:text-whatsapp hover:bg-whatsapp/10"
               }`}
             >
               <MessageCircle size={16} />
@@ -105,7 +112,7 @@ export default function Header() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-ink font-medium text-base"
+                className="font-display text-ink font-medium text-base"
               >
                 {l.label}
               </a>
