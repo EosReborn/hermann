@@ -13,6 +13,10 @@ export default function Testimonials() {
           <h2 className="font-display font-semibold text-3xl md:text-5xl text-ink text-balance">
             Amit az ügyfeleink mondanak
           </h2>
+          <p className="mt-5 text-steel text-lg leading-relaxed">
+            Hitelesített, valós ajánlatkérői visszajelzések – nem szerkesztett vagy
+            kitalált szövegek.
+          </p>
         </div>
 
         <div className="mt-16 grid sm:grid-cols-2 gap-5">
@@ -36,7 +40,7 @@ export default function Testimonials() {
               </blockquote>
               <figcaption className="mt-6 text-sm">
                 <span className="font-semibold text-ink">{t.name}</span>
-                <span className="text-steel"> — {t.location}</span>
+                <span className="text-steel"> — {t.meta}</span>
               </figcaption>
             </motion.figure>
           ))}

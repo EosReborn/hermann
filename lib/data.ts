@@ -29,14 +29,14 @@ export const SERVICES: Service[] = [
     title: "Tolókapu automatika",
     description:
       "Csendes, egyenletes futású motoros tolókapu-rendszerek, akár beton, akár térköves aljzatra tervezve, hosszú távú megbízhatósággal.",
-    image: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/gate-05.jpg",
   },
   {
     id: "szarnyaskapu",
     title: "Szárnyaskapu automatika",
     description:
       "Rejtett vagy föld feletti motorokkal szerelt szárnyaskapu-megoldások, egy- és kétszárnyú kivitelben, kertkapuhoz és beállóhoz egyaránt.",
-    image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/gate-04.jpg",
   },
   {
     id: "garazskapu",
@@ -83,34 +83,21 @@ export const PROCESS = [
 
 export type Testimonial = {
   name: string;
-  location: string;
+  meta: string;
   quote: string;
 };
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Nagy Balázs",
-    location: "Győr",
+    name: "N. Zsolt",
+    meta: "Hitelesített vélemény · 6 hónapja",
     quote:
-      "A tolókapunk három éve fut hibátlanul, amióta a Hermann Automatika telepítette. Gyors, tiszta munka volt.",
+      "Nagyon elégedett vagyok: végig pontosak és rugalmasak voltak. A pontosság miatt nem volt csúszás, és a rugalmasságuk nagyon megkönnyítette az egyeztetéseket.",
   },
   {
-    name: "Kovács Editke",
-    location: "Csorna",
-    quote:
-      "A garázskapu motorunk éjjel is szinte teljesen hangtalan. A beüzemeléskor mindent alaposan elmagyaráztak.",
-  },
-  {
-    name: "Szabó Péter",
-    location: "Mosonmagyaróvár",
-    quote:
-      "A kaputelefon a telefonunkra van kötve, bárhonnan látjuk, ki áll a kapunál. Bármikor hívhatók, ha kérdésünk van.",
-  },
-  {
-    name: "Tóth Andrea",
-    location: "Bőny",
-    quote:
-      "Korábbi szárnyaskapunkat javították meg, amikor máshol csak cserét ajánlottak. Ez őszinte tanácsadás volt.",
+    name: "K. Tamás",
+    meta: "Hitelesített vélemény · 1 éve",
+    quote: "Gyors volt, precízen dolgozott.",
   },
 ];
 
@@ -160,6 +147,11 @@ export const FAQ: FaqItem[] = [
 ];
 
 export const GALLERY_IMAGES = [
+  "/images/gate-01.jpg",
+  "/images/gate-02.jpg",
+  "/images/gate-03.jpg",
+  "/images/gate-04.jpg",
+  "/images/gate-05.jpg",
   "https://images.unsplash.com/photo-1600607687644-c7171b42498b?q=80&w=1000&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1000&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=1000&auto=format&fit=crop",
@@ -167,9 +159,4 @@ export const GALLERY_IMAGES = [
   "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1000&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1000&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1587582423116-ec07293f0395?q=80&w=1000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?q=80&w=1000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600566752734-2a0cd53d99f8?q=80&w=1000&auto=format&fit=crop",
 ];

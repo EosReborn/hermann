@@ -36,17 +36,19 @@ npm run start
    töltődik be – lásd a "Cookie-kezelés" szakaszt lentebb.
 4. **Facebook link** – `lib/data.ts` → `CONTACT.facebookHref` egyelőre placeholder,
    írd át a cég valódi Facebook-oldalára.
-5. **Fotók** – a hero szekcióban már a saját, feltöltött tolókapu-fotó szerepel
-   (`public/images/hero-tolokapu.jpg`). A szolgáltatás kártyákon és a referencia
-   galériában (`lib/data.ts` → `SERVICES`, `GALLERY_IMAGES`) egyelőre helyőrző
-   (Unsplash) képek vannak – cseréld le őket a cég saját fotóira: helyezd a képeket
-   a `public/images/` mappába, és írd át az elérési utakat (pl. `/images/referencia-01.jpg`).
+5. ✅ **Fotók** – a hero szekcióban, a galéria első 5 helyén, valamint a "Tolókapu" és
+   "Szárnyaskapu" szolgáltatáskártyán már valós, feltöltött munkafotók szerepelnek
+   (`public/images/gate-01.jpg` – `gate-05.jpg`). A galéria maradék 7 képe és a
+   "Garázskapu", "Kaputelefon", "Szerviz" kártyák egyelőre helyőrző (Unsplash) képek –
+   cseréld le őket további saját fotókra, ahogy gyűlnek (`lib/data.ts` →
+   `SERVICES`, `GALLERY_IMAGES`).
 6. **Schema.org adatok** – `lib/schema.ts`: cégnév, cím, GPS-koordináták, nyitvatartás,
    telefonszám, e-mail. Ez adja a Google-nek a helyi keresési (Local SEO) információkat.
 7. **Domain** – `app/layout.tsx`, `app/sitemap.ts`, `app/robots.ts` és `lib/schema.ts` fájlokban
    cseréld le a `https://www.hermannautomatika.hu` placeholder domaint a valós domainre.
-8. **Vélemények / GYIK / csapat szövegek** – `lib/data.ts` → `TESTIMONIALS`, `FAQ`, `WHY_US`,
-   `PROCESS`. Írd át valós ügyfélvéleményekre és céges részletekre.
+8. ✅ **Vélemények** – a `TESTIMONIALS` már a két valós, hitelesített ügyfélvéleményt
+   tartalmazza. **GYIK / csapat szövegek** – `lib/data.ts` → `FAQ`, `WHY_US`,
+   `PROCESS`. Ezeket érdemes valós céges részletekre pontosítani.
 9. ⚠️ **Impresszum adatai** – az `/impresszum` oldalon két mező placeholder
    (`[töltendő]` jelöléssel): a nyilvántartási szám / adószám, és a
    tárhelyszolgáltató adatai. Ezeket a `app/impresszum/page.tsx` fájlban, éles
