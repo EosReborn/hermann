@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, Facebook, MapPin, Clock } from "lucide-react";
+import { Phone, MessageCircle, Facebook, MapPin, Clock, Mail } from "lucide-react";
 import { CONTACT } from "@/lib/data";
 
 export default function Contact() {
@@ -66,6 +66,13 @@ export default function Contact() {
                 <h3 className="font-display font-semibold text-ink">Cím</h3>
               </div>
               <p className="text-steel leading-relaxed">{CONTACT.address}</p>
+              <a
+                href={`mailto:${CONTACT.email}`}
+                className="mt-4 inline-flex items-center gap-2 text-sm text-steel hover:text-signal-dim transition-colors"
+              >
+                <Mail size={16} />
+                {CONTACT.email}
+              </a>
             </div>
             <div className="p-8 rounded-md border border-ink/10 bg-porcelain">
               <div className="flex items-center gap-3 text-signal-dim mb-4">

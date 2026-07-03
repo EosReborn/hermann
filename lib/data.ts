@@ -1,17 +1,21 @@
 export const CONTACT = {
-  phoneDisplay: "+36 70 000 0000",
-  phoneHref: "tel:+36700000000",
-  whatsappHref: "https://wa.me/36700000000?text=" + encodeURIComponent("Érdeklődnék kapuautomatika kapcsán."),
+  phoneDisplay: "06 20 366 7737",
+  phoneHref: "tel:+36203667737",
+  whatsappHref: "https://wa.me/36203667737?text=" + encodeURIComponent("Érdeklődnék kapuautomatika kapcsán."),
+  email: "hermann.m@t-online.hu",
   facebookHref: "https://www.facebook.com/hermannautomatika",
-  address: "9081 Bőny, Fő út 1.",
+  address: "9081 Győrújbarát, Petőfi Sándor u. 104",
   mapEmbedSrc:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21962.0!2d17.7167!3d47.6167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDM3JzAwLjEiTiAxN8KwNDMnMDAuMSJF!5e0!3m2!1shu!2shu",
+    "https://www.google.com/maps?q=" +
+    encodeURIComponent("Hermann Automatika, 9081 Győrújbarát, Petőfi Sándor u. 104") +
+    "&output=embed",
   hours: [
-    { day: "Hétfő – Péntek", time: "08:00 – 17:00" },
-    { day: "Szombat", time: "09:00 – 13:00" },
+    { day: "Hétfő – Péntek", time: "9:00 – 17:00" },
+    { day: "Szombat", time: "Telefonos egyeztetés alapján" },
     { day: "Vasárnap", time: "Zárva" },
   ],
 };
+
 
 export type Service = {
   id: string;

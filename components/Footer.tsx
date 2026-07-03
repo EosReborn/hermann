@@ -43,6 +43,11 @@ export default function Footer() {
                   {CONTACT.phoneDisplay}
                 </a>
               </li>
+              <li>
+                <a href={`mailto:${CONTACT.email}`} className="hover:text-ink transition-colors">
+                  {CONTACT.email}
+                </a>
+              </li>
             </ul>
           </div>
 

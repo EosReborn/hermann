@@ -7,20 +7,21 @@ export const localBusinessSchema = {
   description:
     "Motoros tolókapu és szárnyaskapu automatika, garázskapu motorok, kaputelefon telepítés és szakszerviz Győr-Moson-Sopron megyében.",
   url: "https://www.hermannautomatika.hu",
-  telephone: "+36-70-000-0000",
+  telephone: "+36-20-366-7737",
+  email: "hermann.m@t-online.hu",
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Fő út 1.",
-    addressLocality: "Bőny",
+    streetAddress: "Petőfi Sándor u. 104.",
+    addressLocality: "Győrújbarát",
     addressRegion: "Győr-Moson-Sopron",
     postalCode: "9081",
     addressCountry: "HU",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 47.6167,
-    longitude: 17.7167,
+    latitude: 47.6489,
+    longitude: 17.5511,
   },
   areaServed: {
     "@type": "AdministrativeArea",
@@ -30,19 +31,13 @@ export const localBusinessSchema = {
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "17:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Saturday"],
       opens: "09:00",
-      closes: "13:00",
+      closes: "17:00",
     },
   ],
   sameAs: [
     "https://www.facebook.com/hermannautomatika",
-    "https://wa.me/36700000000",
+    "https://wa.me/36203667737",
   ],
   makesOffer: [
     "Tolókapu automatika",

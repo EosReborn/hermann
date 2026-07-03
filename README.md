@@ -23,11 +23,18 @@ npm run start
 
 ## Amit mindenképp cserélj le éles indulás előtt
 
-1. **Telefonszám és WhatsApp szám** – `lib/data.ts` → `CONTACT.phoneDisplay`, `CONTACT.phoneHref`, `CONTACT.whatsappHref`.
-2. **Cím és nyitvatartás** – `lib/data.ts` → `CONTACT.address`, `CONTACT.hours`.
-3. **Google Térkép beágyazás** – `lib/data.ts` → `CONTACT.mapEmbedSrc`. A Google Maps-en keresd meg a
-   pontos címet → Megosztás → Térkép beágyazása → másold be az `src` URL-t.
-4. **Facebook link** – `lib/data.ts` → `CONTACT.facebookHref`.
+1. ✅ **Telefonszám, cím, e-mail** – ezek már a valós céges adatokkal szerepelnek
+   (`lib/data.ts` → `CONTACT`), a Google-adatlap alapján: 06 20 366 7737,
+   hermann.m@t-online.hu, 9081 Győrújbarát, Petőfi Sándor u. 104.
+2. **Nyitvatartás** – csak a hétfői nyitás (9:00) volt ismert a forrásból, a többi
+   becsült érték. Pontosítsd a `lib/data.ts` → `CONTACT.hours` tömböt a tényleges
+   napi/heti rendre.
+3. **Google Térkép beágyazás** – `lib/data.ts` → `CONTACT.mapEmbedSrc` jelenleg egy
+   API-kulcs nélküli, cím alapú beágyazás (`output=embed`). Ha van saját Google
+   Business profilod, cseréld a hivatalos "Térkép beágyazása" kódra a jobb
+   találati pontosságért.
+4. **Facebook link** – `lib/data.ts` → `CONTACT.facebookHref` egyelőre placeholder,
+   írd át a cég valódi Facebook-oldalára.
 5. **Fotók** – a hero szekcióban már a saját, feltöltött tolókapu-fotó szerepel
    (`public/images/hero-tolokapu.jpg`). A szolgáltatás kártyákon és a referencia
    galériában (`lib/data.ts` → `SERVICES`, `GALLERY_IMAGES`) egyelőre helyőrző
