@@ -3,9 +3,9 @@ export const localBusinessSchema = {
   "@type": "LocalBusiness",
   "@id": "https://www.hermannautomatika.hu/#business",
   name: "Hermann Automatika",
-  image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+  image: "https://www.hermannautomatika.hu/images/hero-tolokapu.jpg",
   description:
-    "Motoros tolókapu és szárnyaskapu automatika, garázskapu motorok, kaputelefon, kamerarendszer és okosotthon telepítés Győr-Moson-Sopron megyében.",
+    "Motoros tolókapu és szárnyaskapu automatika, garázskapu motorok, kaputelefon telepítés és szakszerviz Győr-Moson-Sopron megyében.",
   url: "https://www.hermannautomatika.hu",
   telephone: "+36-70-000-0000",
   priceRange: "$$",
@@ -49,8 +49,6 @@ export const localBusinessSchema = {
     "Szárnyaskapu automatika",
     "Garázskapu motorok",
     "Kaputelefon rendszerek",
-    "Kamera rendszerek",
-    "Lakásautomatizálás",
     "Javítás és karbantartás",
   ].map((name) => ({
     "@type": "Offer",

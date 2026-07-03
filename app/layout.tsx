@@ -34,15 +34,14 @@ export const metadata: Metadata = {
     template: "%s | Hermann Automatika",
   },
   description:
-    "Motoros tolókapu és szárnyaskapu automatika, garázskapu motorok, kaputelefon, kamerarendszer és okosotthon telepítés Győr-Moson-Sopron megyében. Hívjon most, vagy írjon WhatsAppon.",
+    "Motoros tolókapu és szárnyaskapu automatika, garázskapu motorok, kaputelefon telepítés és szakszerviz Győr-Moson-Sopron megyében. Hívjon most, vagy írjon WhatsAppon.",
   keywords: [
     "kapuautomatika",
     "tolókapu motor",
     "szárnyaskapu automatika",
     "garázskapu motor",
     "kaputelefon szerelés",
-    "kamerarendszer telepítés",
-    "okosotthon Győr",
+    "kapuautomatika szerviz",
     "Hermann Automatika",
   ],
   authors: [{ name: "Hermann Automatika" }],
@@ -53,10 +52,10 @@ export const metadata: Metadata = {
     siteName: "Hermann Automatika",
     title: "Hermann Automatika | Automatizáljuk kapuját. Egyszerűen. Biztonságosan.",
     description:
-      "Motoros kapunyitók, garázskapu automatizálás, kaputelefonok, kamerarendszerek és okosotthon megoldások Győr-Moson-Sopron megyében.",
+      "Motoros kapunyitók, garázskapu automatizálás és kaputelefonok Győr-Moson-Sopron megyében.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+        url: "/images/hero-tolokapu.jpg",
         width: 1200,
         height: 630,
         alt: "Modern motoros tolókapu",
@@ -66,7 +65,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Hermann Automatika",
-    description: "Kapuautomatika, garázskapu, kaputelefon és kamerarendszer telepítés.",
+    description: "Kapuautomatika, garázskapu és kaputelefon telepítés.",
   },
   robots: { index: true, follow: true },
   alternates: { canonical: siteUrl },
@@ -85,7 +84,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body className="font-body bg-ink text-mist antialiased">
+      <body className="font-body bg-mist text-ink antialiased">
         {children}
         <StickyCTA />
       </body>

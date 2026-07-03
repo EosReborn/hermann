@@ -28,10 +28,11 @@ npm run start
 3. **Google Térkép beágyazás** – `lib/data.ts` → `CONTACT.mapEmbedSrc`. A Google Maps-en keresd meg a
    pontos címet → Megosztás → Térkép beágyazása → másold be az `src` URL-t.
 4. **Facebook link** – `lib/data.ts` → `CONTACT.facebookHref`.
-5. **Fotók** – jelenleg helyőrző (Unsplash) képek szerepelnek a hero szekcióban, a szolgáltatás
-   kártyákon és a referencia galériában (`lib/data.ts` → `SERVICES`, `GALLERY_IMAGES`, illetve
-   `components/Hero.tsx`). Cseréld le őket a cég saját fotóira: helyezd a képeket a `public/`
-   mappába, és írd át az elérési utakat (pl. `/referenciak/kep-01.jpg`).
+5. **Fotók** – a hero szekcióban már a saját, feltöltött tolókapu-fotó szerepel
+   (`public/images/hero-tolokapu.jpg`). A szolgáltatás kártyákon és a referencia
+   galériában (`lib/data.ts` → `SERVICES`, `GALLERY_IMAGES`) egyelőre helyőrző
+   (Unsplash) képek vannak – cseréld le őket a cég saját fotóira: helyezd a képeket
+   a `public/images/` mappába, és írd át az elérési utakat (pl. `/images/referencia-01.jpg`).
 6. **Schema.org adatok** – `lib/schema.ts`: cégnév, cím, GPS-koordináták, nyitvatartás,
    telefonszám. Ez adja a Google-nek a helyi keresési (Local SEO) információkat.
 7. **Domain** – `app/layout.tsx`, `app/sitemap.ts`, `app/robots.ts` és `lib/schema.ts` fájlokban

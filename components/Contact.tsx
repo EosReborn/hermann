@@ -6,16 +6,16 @@ import { CONTACT } from "@/lib/data";
 
 export default function Contact() {
   return (
-    <section id="kapcsolat" className="relative bg-ink py-24 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_20%_20%,#FF6A00,transparent_45%)]" />
+    <section id="kapcsolat" className="relative bg-mist py-24 md:py-32 overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.08] bg-[radial-gradient(circle_at_20%_20%,#FF6A00,transparent_45%)]" />
 
       <div className="container-page relative">
         <div className="text-center max-w-2xl mx-auto">
-          <p className="eyebrow text-signal mb-4">Kapcsolat</p>
-          <h2 className="font-display font-semibold text-3xl md:text-5xl text-porcelain text-balance">
+          <p className="eyebrow text-signal-dim mb-4">Kapcsolat</p>
+          <h2 className="font-display font-semibold text-3xl md:text-5xl text-ink text-balance">
             Hívjon most, és még ma egyeztetünk időpontot
           </h2>
-          <p className="mt-5 text-steel-light text-lg leading-relaxed">
+          <p className="mt-5 text-steel text-lg leading-relaxed">
             Készen állunk, hogy megbeszéljük a kapuja automatizálását. Válassza a
             leggyorsabb utat: telefon vagy WhatsApp.
           </p>
@@ -39,7 +39,7 @@ export default function Contact() {
             href={CONTACT.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-sm border border-whatsapp/40 text-whatsapp font-semibold text-lg hover:bg-whatsapp/10 transition-colors"
+            className="flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-sm border border-whatsapp/50 bg-porcelain text-whatsapp font-semibold text-lg hover:bg-whatsapp/10 transition-colors"
           >
             <MessageCircle size={22} />
             WhatsApp üzenet
@@ -51,7 +51,7 @@ export default function Contact() {
             href={CONTACT.facebookHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-steel-light hover:text-porcelain transition-colors text-sm"
+            className="inline-flex items-center gap-2 text-steel hover:text-ink transition-colors text-sm"
           >
             <Facebook size={18} />
             Kövessen minket Facebookon
@@ -60,30 +60,30 @@ export default function Contact() {
 
         <div className="mt-20 grid lg:grid-cols-[1fr_1.2fr] gap-6">
           <div className="flex flex-col gap-6">
-            <div className="p-8 rounded-md border border-white/10 glass">
-              <div className="flex items-center gap-3 text-signal mb-4">
+            <div className="p-8 rounded-md border border-ink/10 bg-porcelain">
+              <div className="flex items-center gap-3 text-signal-dim mb-4">
                 <MapPin size={20} />
-                <h3 className="font-display font-semibold text-porcelain">Cím</h3>
+                <h3 className="font-display font-semibold text-ink">Cím</h3>
               </div>
-              <p className="text-steel-light leading-relaxed">{CONTACT.address}</p>
+              <p className="text-steel leading-relaxed">{CONTACT.address}</p>
             </div>
-            <div className="p-8 rounded-md border border-white/10 glass">
-              <div className="flex items-center gap-3 text-signal mb-4">
+            <div className="p-8 rounded-md border border-ink/10 bg-porcelain">
+              <div className="flex items-center gap-3 text-signal-dim mb-4">
                 <Clock size={20} />
-                <h3 className="font-display font-semibold text-porcelain">Nyitvatartás</h3>
+                <h3 className="font-display font-semibold text-ink">Nyitvatartás</h3>
               </div>
               <ul className="space-y-2">
                 {CONTACT.hours.map((h) => (
-                  <li key={h.day} className="flex justify-between text-sm text-steel-light">
+                  <li key={h.day} className="flex justify-between text-sm text-steel">
                     <span>{h.day}</span>
-                    <span className="text-porcelain">{h.time}</span>
+                    <span className="text-ink font-medium">{h.time}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
-          <div className="rounded-md overflow-hidden border border-white/10 min-h-[320px]">
+          <div className="rounded-md overflow-hidden border border-ink/10 min-h-[320px]">
             <iframe
               title="Hermann Automatika – térkép"
               src={CONTACT.mapEmbedSrc}

@@ -7,18 +7,21 @@ import { CONTACT } from "@/lib/data";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative min-h-[100svh] flex items-end overflow-hidden bg-ink">
+    <section id="top" className="relative min-h-[100svh] flex items-end overflow-hidden bg-mist">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?q=80&w=2400&auto=format&fit=crop"
-          alt="Modern motoros tolókapu családi ház előtt"
+          src="/images/hero-tolokapu.jpg"
+          alt="Motoros tolókapu Beninca automatikával, modern acéllamellás kivitelben"
           fill
           priority
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-transparent to-ink/40" />
+        {/* Scrim only where the headline sits, so the photo itself stays bright and true to color */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-transparent to-transparent" />
+        {/* Smooth hand-off into the light page background below */}
+        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-mist to-transparent" />
       </div>
 
       <div className="relative container-page pb-24 pt-40 md:pb-32 w-full">
@@ -49,8 +52,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 text-lg md:text-xl text-steel-light max-w-xl leading-relaxed"
         >
-          Motoros kapunyitók, garázskapu automatizálás, kaputelefonok, kamerarendszerek
-          és okosotthon megoldások Győr-Moson-Sopron megyében.
+          Motoros kapunyitók, garázskapu automatizálás és kaputelefon rendszerek
+          telepítése Győr-Moson-Sopron megyében.
         </motion.p>
 
         <motion.div

@@ -50,20 +50,6 @@ export const SERVICES: Service[] = [
     image: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    id: "kamera",
-    title: "Kamera rendszerek",
-    description:
-      "Éjjellátó, mozgásérzékelős kamerarendszerek távoli megtekintéssel, amelyek a kapuval és a bejárattal együtt védik az ingatlant.",
-    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    id: "okosotthon",
-    title: "Lakásautomatizálás",
-    description:
-      "A kaputól a redőnyig egy alkalmazásban: okosotthon-integráció, amely a meglévő automatikát is bevonja a rendszerbe.",
-    image: "https://images.unsplash.com/photo-1558002038-bb4237b8f4b6?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
     id: "szerviz",
     title: "Javítás és karbantartás",
     description:
@@ -115,7 +101,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Szabó Péter",
     location: "Mosonmagyaróvár",
     quote:
-      "A kaputelefon és a kamera egy rendszerben fut a telefonunkon. Bármikor hívhatók, ha kérdésünk van.",
+      "A kaputelefon a telefonunkra van kötve, bárhonnan látjuk, ki áll a kapunál. Bármikor hívhatók, ha kérdésünk van.",
   },
   {
     name: "Tóth Andrea",

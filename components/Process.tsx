@@ -6,7 +6,7 @@ import { CONTACT } from "@/lib/data";
 
 export default function Process() {
   return (
-    <section id="folyamat" className="relative bg-mist text-ink py-24 md:py-32">
+    <section id="folyamat" className="relative bg-porcelain text-ink py-24 md:py-32">
       <div className="container-page">
         <div className="max-w-2xl">
           <p className="eyebrow text-signal-dim mb-4">Hogyan dolgozunk?</p>
@@ -35,7 +35,7 @@ export default function Process() {
                 className="relative pl-16 lg:pl-0"
               >
                 <div className="absolute left-0 top-0 lg:static lg:mb-6">
-                  <div className="w-14 h-14 rounded-full border-2 border-signal bg-mist flex items-center justify-center font-display font-semibold text-signal-dim relative z-10">
+                  <div className="w-14 h-14 rounded-full border-2 border-signal bg-porcelain flex items-center justify-center font-display font-semibold text-signal-dim relative z-10">
                     {String(i + 1).padStart(2, "0")}
                   </div>
                 </div>

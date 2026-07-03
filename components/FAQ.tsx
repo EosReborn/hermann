@@ -9,7 +9,7 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="gyik" className="relative bg-mist text-ink py-24 md:py-32">
+    <section id="gyik" className="relative bg-porcelain text-ink py-24 md:py-32">
       <div className="container-page">
         <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-14">
           <div>

@@ -7,8 +7,6 @@ import {
   DoorOpen,
   Warehouse,
   PhoneCall,
-  Camera,
-  Home,
   Wrench,
   ArrowUpRight,
 } from "lucide-react";
@@ -21,21 +19,19 @@ const ICONS: Record<string, React.ElementType> = {
   szarnyaskapu: DoorOpen,
   garazskapu: Warehouse,
   kaputelefon: PhoneCall,
-  kamera: Camera,
-  okosotthon: Home,
   szerviz: Wrench,
 };
 
 export default function Services() {
   return (
-    <section id="szolgaltatasok" className="relative bg-ink py-24 md:py-32">
+    <section id="szolgaltatasok" className="relative bg-porcelain py-24 md:py-32">
       <div className="container-page">
         <div className="max-w-2xl">
-          <p className="eyebrow text-signal mb-4">Szolgáltatások</p>
-          <h2 className="font-display font-semibold text-3xl md:text-5xl text-porcelain text-balance">
+          <p className="eyebrow text-signal-dim mb-4">Szolgáltatások</p>
+          <h2 className="font-display font-semibold text-3xl md:text-5xl text-ink text-balance">
             Teljes körű megoldás a bejárattól a beállóig
           </h2>
-          <p className="mt-5 text-steel-light text-lg leading-relaxed">
+          <p className="mt-5 text-steel text-lg leading-relaxed">
             A felméréstől a beüzemelésig egy kézben tartjuk a folyamatot – minden
             szolgáltatásunkat egyedileg, az Ön kapujára és otthonára szabjuk.
           </p>
@@ -51,7 +47,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.55, delay: (i % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative overflow-hidden rounded-md border border-white/10 bg-anthracite hover:border-signal/40 transition-colors"
+                className="group relative overflow-hidden rounded-md border border-ink/10 bg-mist hover:border-signal/50 hover:shadow-lg transition-all"
               >
                 <div className="relative h-44 overflow-hidden">
                   <Image
@@ -62,22 +58,22 @@ export default function Services() {
                     loading="lazy"
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-anthracite via-anthracite/20 to-transparent" />
-                  <div className="absolute top-4 left-4 w-11 h-11 rounded-sm glass flex items-center justify-center text-signal">
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/5 to-transparent" />
+                  <div className="absolute top-4 left-4 w-11 h-11 rounded-sm glass-light flex items-center justify-center text-signal-dim">
                     <Icon size={20} strokeWidth={2} />
                   </div>
                 </div>
 
                 <div className="p-6">
-                  <h3 className="font-display font-semibold text-lg text-porcelain">
+                  <h3 className="font-display font-semibold text-lg text-ink">
                     {service.title}
                   </h3>
-                  <p className="mt-2.5 text-sm text-steel-light leading-relaxed">
+                  <p className="mt-2.5 text-sm text-steel leading-relaxed">
                     {service.description}
                   </p>
                   <a
                     href={CONTACT.phoneHref}
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-signal opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-signal-dim opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all"
                   >
                     Érdeklődöm
                     <ArrowUpRight size={15} />
@@ -88,8 +84,8 @@ export default function Services() {
           })}
         </div>
 
-        <div className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-md border border-white/10 glass p-8">
-          <p className="text-porcelain text-lg font-medium max-w-md">
+        <div className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-md border border-ink/10 bg-mist p-8">
+          <p className="text-ink text-lg font-medium max-w-md">
             Nem biztos benne, melyik megoldás illik a kapujához? Hívjon, és pár perc
             alatt átbeszéljük.
           </p>

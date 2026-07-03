@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -23,8 +23,8 @@ html {
 }
 
 body {
-  background-color: #0A0A0B;
-  color: #F6F6F4;
+  background-color: #F6F6F4;
+  color: #0A0A0B;
   font-feature-settings: "ss01" 1, "cv01" 1;
 }
 

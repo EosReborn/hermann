@@ -5,7 +5,7 @@ export default function Rail({ label }: { label?: string }) {
         <div className="rail-roller shrink-0" />
         <div className="rail-track flex-1" />
         {label ? (
-          <span className="eyebrow text-steel-light shrink-0">{label}</span>
+          <span className="eyebrow text-steel shrink-0">{label}</span>
         ) : null}
       </div>
     </div>
