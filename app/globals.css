@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #0A0A0B;
+  color: #F6F6F4;
+  font-feature-settings: "ss01" 1, "cv01" 1;
+}
+
+::selection {
+  background-color: #FF6A00;
+  color: #0A0A0B;
+}
+
+/* Visible keyboard focus ring, brand-consistent */
+:focus-visible {
+  outline: 2px solid #FF6A00;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --- Signature motif: the "rail" ---
+   A running steel track with a roller that echoes a sliding-gate rail.
+   Used as a section divider / scroll-progress element. */
+.rail-track {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #33363C 8%, #33363C 92%, transparent);
+}
+
+.rail-track::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transform: translateY(-50%);
+  background-image: repeating-linear-gradient(90deg, #4A4F58 0, #4A4F58 4px, transparent 4px, transparent 12px);
+  opacity: 0.5;
+}
+
+.rail-roller {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #FF6A00;
+  box-shadow: 0 0 0 4px rgba(255,106,0,0.12), 0 0 18px rgba(255,106,0,0.55);
+}
+
+/* Glassmorphism surface */
+.glass {
+  background: rgba(27, 29, 33, 0.55);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(10, 10, 11, 0.06);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* subtle grain overlay for premium depth on dark sections */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--grain-image, none);
+}
+
+.eyebrow {
+  font-family: var(--font-mono), monospace;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.container-page {
+  max-width: 84rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container-page {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
