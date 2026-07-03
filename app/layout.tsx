@@ -3,6 +3,8 @@ import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { localBusinessSchema } from "@/lib/schema";
 import StickyCTA from "@/components/StickyCTA";
+import CookieConsent from "@/components/CookieConsent";
+import { CookieConsentProvider } from "@/lib/cookie-consent-context";
 
 const display = Space_Grotesk({
   subsets: ["latin", "latin-ext"],
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s | Hermann Automatika",
   },
   description:
-    "Motoros tolókapu és szárnyaskapu automatika, garázskapu motorok, kaputelefon telepítés és szakszerviz Győr-Moson-Sopron megyében. Hívjon most, vagy írjon WhatsAppon.",
+    "Motoros tolókapu és szárnyaskapu automatika, garázskapu motorok, kaputelefon telepítés és szakszerviz Győr-Moson-Sopron megyében. Hívjon most.",
   keywords: [
     "kapuautomatika",
     "tolókapu motor",
@@ -85,8 +87,11 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body bg-mist text-ink antialiased">
-        {children}
-        <StickyCTA />
+        <CookieConsentProvider>
+          {children}
+          <StickyCTA />
+          <CookieConsent />
+        </CookieConsentProvider>
       </body>
     </html>
   );

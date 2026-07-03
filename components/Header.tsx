@@ -1,33 +1,36 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Phone, MessageCircle, Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Phone, Menu, X } from "lucide-react";
 import { CONTACT } from "@/lib/data";
 
 // Kept short and to the point — a long link list crowds the bar and starts
-// competing with the two real conversion actions (call / WhatsApp).
+// competing with the one real conversion action (call).
 const LINKS = [
-  { href: "#szolgaltatasok", label: "Szolgáltatások" },
-  { href: "#referenciak", label: "Referenciák" },
-  { href: "#velemenyek", label: "Vélemények" },
-  { href: "#gyik", label: "GYIK" },
-  { href: "#kapcsolat", label: "Kapcsolat" },
+  { href: "/#szolgaltatasok", label: "Szolgáltatások" },
+  { href: "/#referenciak", label: "Referenciák" },
+  { href: "/#velemenyek", label: "Vélemények" },
+  { href: "/#gyik", label: "GYIK" },
+  { href: "/#kapcsolat", label: "Kapcsolat" },
 ];
 
-export default function Header() {
+export default function Header({ overHero = false }: { overHero?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    if (!overHero) return;
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [overHero]);
 
-  // Header sits over the hero photo when not scrolled; once scrolled past
-  // the hero it switches to a light glass bar with dark text.
-  const solid = scrolled || open;
+  // On the homepage the header starts transparent over the hero photo and
+  // solidifies on scroll. Pages without a hero (legal pages) always use the
+  // solid, light-glass look — there's no photo for it to sit over.
+  const solid = !overHero || scrolled || open;
 
   return (
     <header
@@ -44,9 +47,16 @@ export default function Header() {
 
       <div className="container-page">
         <div className="flex items-center justify-between h-20">
-          <a href="#top" className="flex items-center gap-2.5 group">
-            <span className="relative w-8 h-8 rounded-sm border border-signal/60 flex items-center justify-center">
-              <span className="w-3 h-3 rounded-full bg-signal group-hover:animate-pulseDot" />
+          <a href="/#top" className="flex items-center gap-3 group">
+            <span className="relative w-11 h-11 rounded-sm overflow-hidden bg-black shrink-0">
+              <Image
+                src="/images/logo-mark.jpg"
+                alt="Hermann Automatika logó"
+                fill
+                sizes="44px"
+                className="object-cover"
+                priority
+              />
             </span>
             <span
               className={`font-display font-semibold text-lg tracking-tight transition-colors ${
@@ -71,23 +81,10 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <a
-              href={CONTACT.whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-sm border text-sm font-semibold transition-colors ${
-                solid
-                  ? "border-whatsapp/40 text-whatsapp hover:bg-whatsapp/10"
-                  : "border-whatsapp/60 text-porcelain hover:text-whatsapp hover:bg-whatsapp/10"
-              }`}
-            >
-              <MessageCircle size={16} />
-              WhatsApp
-            </a>
+          <div className="hidden lg:flex items-center">
             <a
               href={CONTACT.phoneHref}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-signal text-ink text-sm font-semibold hover:bg-signal-glow hover:shadow-glow-signal transition-all"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-signal text-ink text-sm font-semibold hover:bg-signal-glow hover:shadow-glow-signal transition-all"
             >
               <Phone size={16} strokeWidth={2.5} />
               Hívjon most
@@ -117,22 +114,12 @@ export default function Header() {
                 {l.label}
               </a>
             ))}
-            <div className="flex gap-3 pt-2">
-              <a
-                href={CONTACT.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 text-center py-3 rounded-sm border border-whatsapp/40 text-whatsapp text-sm font-semibold"
-              >
-                WhatsApp
-              </a>
-              <a
-                href={CONTACT.phoneHref}
-                className="flex-1 text-center py-3 rounded-sm bg-signal text-ink text-sm font-semibold"
-              >
-                Hívjon most
-              </a>
-            </div>
+            <a
+              href={CONTACT.phoneHref}
+              className="mt-2 text-center py-3 rounded-sm bg-signal text-ink text-sm font-semibold"
+            >
+              Hívjon most
+            </a>
           </div>
         </div>
       )}

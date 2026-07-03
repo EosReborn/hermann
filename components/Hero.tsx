@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Phone, MessageCircle, ChevronDown } from "lucide-react";
+import { Phone, ChevronDown } from "lucide-react";
 import { CONTACT } from "@/lib/data";
 
 export default function Hero() {
@@ -60,23 +60,14 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-10 flex flex-col sm:flex-row gap-4"
+          className="mt-10"
         >
           <a
             href={CONTACT.phoneHref}
-            className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-sm bg-signal text-ink font-semibold text-base hover:bg-signal-glow hover:shadow-glow-signal transition-all"
+            className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-sm bg-signal text-ink font-semibold text-base hover:bg-signal-glow hover:shadow-glow-signal transition-all"
           >
             <Phone size={19} strokeWidth={2.5} />
             Hívjon most
-          </a>
-          <a
-            href={CONTACT.whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-sm glass text-porcelain font-semibold text-base border-whatsapp/30 hover:border-whatsapp/60 hover:text-whatsapp transition-colors"
-          >
-            <MessageCircle size={19} />
-            WhatsApp
           </a>
         </motion.div>
 

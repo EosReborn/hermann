@@ -35,10 +35,7 @@ export const localBusinessSchema = {
       closes: "17:00",
     },
   ],
-  sameAs: [
-    "https://www.facebook.com/hermannautomatika",
-    "https://wa.me/36203667737",
-  ],
+  sameAs: ["https://www.facebook.com/hermannautomatika"],
   makesOffer: [
     "Tolókapu automatika",
     "Szárnyaskapu automatika",

@@ -20,7 +20,6 @@ const config: Config = {
           dim: "#CC5500",
           glow: "#FF8A33",
         },
-        whatsapp: "#25D366",
         rail: "#33363C",
       },
       fontFamily: {

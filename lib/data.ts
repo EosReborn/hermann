@@ -1,7 +1,6 @@
 export const CONTACT = {
   phoneDisplay: "06 20 366 7737",
   phoneHref: "tel:+36203667737",
-  whatsappHref: "https://wa.me/36203667737?text=" + encodeURIComponent("Érdeklődnék kapuautomatika kapcsán."),
   email: "hermann.m@t-online.hu",
   facebookHref: "https://www.facebook.com/hermannautomatika",
   address: "9081 Győrújbarát, Petőfi Sándor u. 104",
@@ -74,7 +73,7 @@ export const WHY_US = [
 export const BRANDS = ["Beninca", "Motorline", "Sommer", "Nice", "BFT", "FAAC"];
 
 export const PROCESS = [
-  { title: "Kapcsolatfelvétel", description: "Hívjon vagy írjon WhatsAppon – felmérjük az igényeit telefonon." },
+  { title: "Kapcsolatfelvétel", description: "Hívjon minket – felmérjük az igényeit telefonon." },
   { title: "Helyszíni felmérés", description: "Megnézzük a kaput, a beállót és a rendelkezésre álló áramforrást." },
   { title: "Személyre szabott megoldás", description: "Javaslatot adunk a kapu típusához és a költségkerethez illő motorra." },
   { title: "Telepítés", description: "Szakszerű, tiszta munkavégzés, egyeztetett időpontban." },
@@ -146,7 +145,7 @@ export const FAQ: FaqItem[] = [
   {
     question: "Mennyibe kerül egy kapuautomatika kiépítése?",
     answer:
-      "Az ár a kapu típusától, méretétől és a választott kiegészítőktől (távirányító, kaputelefon, biztonsági fotocella) függ. Pontos árajánlatot a helyszíni felmérés után adunk, telefonon vagy WhatsAppon.",
+      "Az ár a kapu típusától, méretétől és a választott kiegészítőktől (távirányító, kaputelefon, biztonsági fotocella) függ. Pontos árajánlatot a helyszíni felmérés után adunk, telefonon.",
   },
   {
     question: "Vállalnak javítást más cég által telepített motorokon is?",

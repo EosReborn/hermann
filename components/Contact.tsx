@@ -1,10 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, Facebook, MapPin, Clock, Mail } from "lucide-react";
+import { Phone, Facebook, MapPin, Clock, Mail, MapPinned } from "lucide-react";
 import { CONTACT } from "@/lib/data";
+import { useCookieConsent } from "@/lib/cookie-consent-context";
 
 export default function Contact() {
+  const { consent, ready, accept } = useCookieConsent();
+  const mapAllowed = ready && consent === "accepted";
+
   return (
     <section id="kapcsolat" className="relative bg-mist py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0 opacity-[0.08] bg-[radial-gradient(circle_at_20%_20%,#FF6A00,transparent_45%)]" />
@@ -16,8 +20,8 @@ export default function Contact() {
             Hívjon most, és még ma egyeztetünk időpontot
           </h2>
           <p className="mt-5 text-steel text-lg leading-relaxed">
-            Készen állunk, hogy megbeszéljük a kapuja automatizálását. Válassza a
-            leggyorsabb utat: telefon vagy WhatsApp.
+            Készen állunk, hogy megbeszéljük a kapuja automatizálását – egy hívás,
+            és pontosítjuk a részleteket.
           </p>
         </div>
 
@@ -26,23 +30,14 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-12 flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-xl mx-auto"
+          className="mt-12 flex justify-center"
         >
           <a
             href={CONTACT.phoneHref}
-            className="flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-sm bg-signal text-ink font-semibold text-lg hover:bg-signal-glow hover:shadow-glow-signal transition-all"
+            className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-sm bg-signal text-ink font-semibold text-lg hover:bg-signal-glow hover:shadow-glow-signal transition-all"
           >
             <Phone size={22} strokeWidth={2.5} />
             {CONTACT.phoneDisplay}
-          </a>
-          <a
-            href={CONTACT.whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-sm border border-whatsapp/50 bg-porcelain text-whatsapp font-semibold text-lg hover:bg-whatsapp/10 transition-colors"
-          >
-            <MessageCircle size={22} />
-            WhatsApp üzenet
           </a>
         </motion.div>
 
@@ -90,16 +85,31 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="rounded-md overflow-hidden border border-ink/10 min-h-[320px]">
-            <iframe
-              title="Hermann Automatika – térkép"
-              src={CONTACT.mapEmbedSrc}
-              width="100%"
-              height="100%"
-              style={{ border: 0, minHeight: 320 }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="rounded-md overflow-hidden border border-ink/10 min-h-[320px] bg-porcelain">
+            {mapAllowed ? (
+              <iframe
+                title="Hermann Automatika – térkép"
+                src={CONTACT.mapEmbedSrc}
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: 320 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            ) : (
+              <div className="h-full min-h-[320px] flex flex-col items-center justify-center text-center p-8">
+                <MapPinned className="text-signal-dim mb-4" size={28} />
+                <p className="text-steel text-sm leading-relaxed max-w-xs">
+                  A térkép megjelenítéséhez a Google saját sütijeire van szükség.
+                </p>
+                <button
+                  onClick={accept}
+                  className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-signal text-ink text-sm font-semibold hover:bg-signal-glow transition-colors"
+                >
+                  Sütik elfogadása és térkép betöltése
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

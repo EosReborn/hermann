@@ -1,5 +1,8 @@
-import { Facebook, MessageCircle, Phone } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Facebook, Phone } from "lucide-react";
 import { CONTACT, SERVICES } from "@/lib/data";
+import CookieSettingsButton from "./CookieSettingsButton";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -9,9 +12,20 @@ export default function Footer() {
       <div className="container-page">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <span className="font-display font-semibold text-lg text-ink">
-              Hermann <span className="text-signal-dim">Automatika</span>
-            </span>
+            <div className="flex items-center gap-3">
+              <span className="relative w-10 h-10 rounded-sm overflow-hidden bg-black shrink-0">
+                <Image
+                  src="/images/logo-mark.jpg"
+                  alt="Hermann Automatika logó"
+                  fill
+                  sizes="40px"
+                  className="object-cover"
+                />
+              </span>
+              <span className="font-display font-semibold text-lg text-ink">
+                Hermann <span className="text-signal-dim">Automatika</span>
+              </span>
+            </div>
             <p className="mt-4 text-sm text-steel leading-relaxed max-w-xs">
               Kapuautomatika, garázskapu és kaputelefon telepítés
               Győr-Moson-Sopron megyében.
@@ -24,7 +38,7 @@ export default function Footer() {
               {SERVICES.slice(0, 5).map((s) => (
                 <li key={s.id}>
                   <a
-                    href="#szolgaltatasok"
+                    href="/#szolgaltatasok"
                     className="text-sm text-steel hover:text-ink transition-colors"
                   >
                     {s.title}
@@ -64,15 +78,6 @@ export default function Footer() {
                 <Facebook size={17} />
               </a>
               <a
-                href={CONTACT.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="w-10 h-10 rounded-sm border border-ink/10 flex items-center justify-center text-steel hover:text-whatsapp hover:border-whatsapp/40 transition-colors"
-              >
-                <MessageCircle size={17} />
-              </a>
-              <a
                 href={CONTACT.phoneHref}
                 aria-label="Telefon"
                 className="w-10 h-10 rounded-sm border border-ink/10 flex items-center justify-center text-steel hover:text-signal-dim hover:border-signal/40 transition-colors"
@@ -83,9 +88,17 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 pt-8 border-t border-ink/10 flex flex-col sm:flex-row justify-between gap-3 text-xs text-steel">
+        <div className="mt-14 pt-8 border-t border-ink/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-steel">
           <span>© {year} Hermann Automatika. Minden jog fenntartva.</span>
-          <span>Készült precizitással, mint egy jól beállított kapumotor.</span>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link href="/adatvedelem" className="hover:text-ink underline underline-offset-2 transition-colors">
+              Adatvédelmi tájékoztató
+            </Link>
+            <Link href="/impresszum" className="hover:text-ink underline underline-offset-2 transition-colors">
+              Impresszum
+            </Link>
+            <CookieSettingsButton />
+          </div>
         </div>
       </div>
     </footer>
